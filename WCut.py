@@ -6,21 +6,21 @@ print('Bem-vindo Lucas, ótimo dia de trabalho para você :)')
 while True:
     nome_cliente = str(input('Qual nome do(a) cliente? '))
     altura = int(input('Qual é a altura? '))
-    largura = int(input('Qual é a largura? ' ))
-    subtracao_largura=largura - 30
+    largura = int(input('Qual é a largura? '))
+    subtracao_largura = largura - 30
     largura_aux = largura-10
-    espessura=15
-    espessura_fundo= 6
-    profundidade_modulo=int(input('Qual é a profundidade? '))
-    porta_puxador=altura-45
-    porta_sem_puxador=altura-10
-    porta_largura=largura-10
+    espessura = 15
+    espessura_fundo = 6
+    profundidade_modulo = int(input('Qual é a profundidade? '))
+    porta_puxador = altura-45
+    porta_sem_puxador = altura-10
+    porta_largura = largura-10
     porta_largura_two = math.floor(porta_largura/2)
-    numero_portas=int(input('Quantas portas? '))
-    porta=str(input('Porta com puxador? '))
-    subtracao2=profundidade_modulo-50
-    prat_int=int(input('Quantas prateleiras internas? '))
-    batente= str(input('O módulo possui batente? '))
+    numero_portas = int(input('Quantas portas? '))
+    porta = str(input('Porta com puxador? '))
+    subtracao2 = profundidade_modulo-50
+    prat_int = int(input('Quantas prateleiras internas? '))
+    batente = str(input('O módulo possui batente? '))
     fundo = str(input('Tem fundo? '))
     quantidade_gavetas = int(input('Quantas gavetas? '))
     porta_tempero = str(input('É porta tempero? '))
@@ -34,65 +34,60 @@ while True:
     total = gaveta_aux - 35
     total = (2 * gaveta_menor) + gaveta_maior + 105
 
-
     arquivo = open(r"C:\Users\Positivo i5\Desktop\PLANOS DE CORTE\Plano de corte " + nome_cliente + '.txt', "a")
 
-
-    lateral = '2x {}*{}*{} (1+/1-) lateral\n'.format(altura,profundidade_modulo,espessura)
+    lateral = '2x {}*{}*{} (1+/1-) lateral\n'.format(altura, profundidade_modulo, espessura)
     print(lateral)
     arquivo.write(lateral)
 
-    if batente=='sim':
-        with_batente = '1x {}*{}*{} (1+) base\n'.format(subtracao_largura,profundidade_modulo,espessura)
-        #print('1x {}*{}*{} (1+) base'.format(subtracao_largura,profundidade_modulo,espessura))
+    if batente == 'sim':
+        with_batente = '1x {}*{}*{} (1+) base\n'.format(subtracao_largura, profundidade_modulo, espessura)
         print(with_batente)
-        with_batente_2 = '1x {}*{}*{} (2+) batente\n'.format(subtracao_largura,60,espessura)
+        with_batente_2 = '1x {}*{}*{} (2+) batente\n'.format(subtracao_largura, 60, espessura)
         print(with_batente_2)
         arquivo.write(with_batente + with_batente_2)
     else:
-        without_batente ='2x {}*{}*{} (1+) base/superior\n'.format(subtracao_largura,profundidade_modulo,espessura)
+        without_batente = '2x {}*{}*{} (1+) base/superior\n'.format(subtracao_largura, profundidade_modulo, espessura)
         print(without_batente)
         arquivo.write(without_batente)
 
-
-
     if prat_int == 1:
-        one_prat = ('1x {}*{}*{} (1+) prat interna\n'.format(subtracao_largura,subtracao2, espessura))
+        one_prat = ('1x {}*{}*{} (1+) prat interna\n'.format(subtracao_largura, subtracao2, espessura))
         print(one_prat)
         arquivo.write(one_prat)
     if prat_int == 2:
-        two_prat = ('2x {}*{}*{} (1+) prat interna\n'.format(subtracao_largura,subtracao2,espessura))
+        two_prat = ('2x {}*{}*{} (1+) prat interna\n'.format(subtracao_largura, subtracao2, espessura))
         print(two_prat)
         arquivo.write(two_prat)
 
-    if porta =='sim':
+    if porta == 'sim':
 
         if numero_portas == 1:
-            one_door_handle =('1x {}*{}*{} (4L) porta\n'.format(porta_puxador,porta_largura,espessura))
+            one_door_handle = ('1x {}*{}*{} (4L) porta\n'.format(porta_puxador, porta_largura, espessura))
             print(one_door_handle)
             arquivo.write(one_door_handle)
         if numero_portas == 2:
-            two_door_handle = ('2x {}*{}*{} (4L) porta\n'.format(porta_puxador,porta_largura_two,espessura))
+            two_door_handle = ('2x {}*{}*{} (4L) porta\n'.format(porta_puxador, porta_largura_two, espessura))
             print(two_door_handle)
         arquivo.write(two_door_handle)
-    else:
-     if numero_portas < 1:
+
+    if numero_portas < 1:
         pass
-     if numero_portas == 1:
-         one_door_no_handle = ('1x {}*{}*{} (4L) porta\n'.format(porta_sem_puxador,porta_largura,espessura,))
-         print(one_door_no_handle)
-         arquivo.write(one_door_no_handle)
-     if numero_portas == 2:
-        two_door_no_handle = ('2x {}*{}*{} (4L) porta\n'.format(porta_sem_puxador,porta_largura_two,espessura,))
+    if numero_portas == 1:
+        one_door_no_handle = ('1x {}*{}*{} (4L) porta\n'.format(porta_sem_puxador, porta_largura, espessura))
+        print(one_door_no_handle)
+        arquivo.write(one_door_no_handle)
+    if numero_portas == 2:
+        two_door_no_handle = ('2x {}*{}*{} (4L) porta\n'.format(porta_sem_puxador, porta_largura_two, espessura,))
         print(two_door_no_handle)
         arquivo.write(two_door_no_handle)
 
     if fundo == 'sim':
-        back = ('1x {}*{}*{} fundo\n'.format(largura,altura,espessura_fundo))
+        back = ('1x {}*{}*{} fundo\n'.format(largura, altura, espessura_fundo))
         print(back)
         arquivo.write(back)
 
-    #gavetas com puxador#
+    '#gavetas com puxador#'
     if quantidade_gavetas == 1:
         sub_altura = altura - 10
         fundo_gav = largura - 57
@@ -102,12 +97,12 @@ while True:
         arquivo.write(one_drawer)
 
         if profundidade_modulo >= 470:
-           lat_one_drawer = ('2x {}*{}*{} (1+) lateral gav\n'.format(gaveta - 35,'420', espessura))
-           back_one_drawer = ('1x {}*{}*{} (2+) fundo gav\n'.format(fundo_gav, '420', espessura_fundo))
-           print(lat_one_drawer)
-           print(back_one_drawer)
-           arquivo.write(lat_one_drawer)
-           arquivo.write(back_one_drawer)
+            lat_one_drawer = ('2x {}*{}*{} (1+) lateral gav\n'.format(gaveta - 35, '420', espessura))
+            back_one_drawer = ('1x {}*{}*{} (2+) fundo gav\n'.format(fundo_gav, '420', espessura_fundo))
+            print(lat_one_drawer)
+            print(back_one_drawer)
+            arquivo.write(lat_one_drawer)
+            arquivo.write(back_one_drawer)
         else:
             lat_one_drawer = ('2x {}*{}*{} (1+) lateral gav\n'.format(gaveta - 35, profundidade_modulo - 50, espessura))
             back_one_drawer = ('1x {}*{}*{} (2+) fundo gav\n'.format(fundo_gav, profundidade_modulo - 50, espessura_fundo))
@@ -119,7 +114,6 @@ while True:
         print(front_back_one_drawer)
         arquivo.write(front_back_one_drawer)
 
-
     if quantidade_gavetas == 2:
         sub_altura = altura - 15
         gaveta_aux = (sub_altura / 2)
@@ -128,7 +122,7 @@ while True:
         gaveta_maior = math.ceil(gaveta_aux + gaveta_aux2 - 35)
         fundo_gav = largura - 57
         total = gaveta_aux - 35
-        if total > sub_altura:## pega o resto e coloca na medida da gaveta maior
+        if total > sub_altura:'## pega o resto e coloca na medida da gaveta maior'
             rest = sub_altura - total
             gaveta_maior = gaveta_maior + rest
         front_gav_2 = ("1x {}*{}*{} (4L) frente gav menor\n".format(gaveta_menor, largura_aux, espessura))
