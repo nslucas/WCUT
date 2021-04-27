@@ -1,12 +1,11 @@
 import math
-import os
 
 print('Bem-vindo Lucas, ótimo dia de trabalho para você :)')
 
 
-while (True):
+while True:
     nome_cliente = str(input('Qual nome do(a) cliente? '))
-    altura=int(input('Qual é a altura? '))
+    altura = int(input('Qual é a altura? '))
     largura = int(input('Qual é a largura? ' ))
     subtracao_largura=largura - 30
     largura_aux = largura-10
@@ -19,7 +18,7 @@ while (True):
     porta_largura_two = math.floor(porta_largura/2)
     numero_portas=int(input('Quantas portas? '))
     porta=str(input('Porta com puxador? '))
-    subtracao2=profundidade_modulo-100
+    subtracao2=profundidade_modulo-50
     prat_int=int(input('Quantas prateleiras internas? '))
     batente= str(input('O módulo possui batente? '))
     fundo = str(input('Tem fundo? '))
@@ -36,7 +35,7 @@ while (True):
     total = (2 * gaveta_menor) + gaveta_maior + 105
 
 
-    arquivo = open(r"C:\Users\Lucas\Desktop\PLANOS DE CORTE\Plano de corte " + nome_cliente + '.txt', "a")
+    arquivo = open(r"C:\Users\Positivo i5\Desktop\PLANOS DE CORTE\Plano de corte " + nome_cliente + '.txt', "a")
 
 
     lateral = '2x {}*{}*{} (1+/1-) lateral\n'.format(altura,profundidade_modulo,espessura)
@@ -104,14 +103,14 @@ while (True):
 
         if profundidade_modulo >= 470:
            lat_one_drawer = ('2x {}*{}*{} (1+) lateral gav\n'.format(gaveta - 35,'420', espessura))
-           back_one_drawer = ('1x {}*{}*{} fundo gav\n'.format(fundo_gav, '420', espessura_fundo))
+           back_one_drawer = ('1x {}*{}*{} (2+) fundo gav\n'.format(fundo_gav, '420', espessura_fundo))
            print(lat_one_drawer)
            print(back_one_drawer)
            arquivo.write(lat_one_drawer)
            arquivo.write(back_one_drawer)
         else:
             lat_one_drawer = ('2x {}*{}*{} (1+) lateral gav\n'.format(gaveta - 35, profundidade_modulo - 50, espessura))
-            back_one_drawer = ('1x {}*{}*{} fundo gav\n'.format(fundo_gav, profundidade_modulo - 50, espessura_fundo))
+            back_one_drawer = ('1x {}*{}*{} (2+) fundo gav\n'.format(fundo_gav, profundidade_modulo - 50, espessura_fundo))
             print(lat_one_drawer)
             print(back_one_drawer)
             arquivo.write(lat_one_drawer + back_one_drawer)
@@ -138,13 +137,13 @@ while (True):
         print(front_gav_bigger_2)
         arquivo.write(front_gav_2 + front_gav_bigger_2)
         if total == sub_altura:
-            front_gav2('2x {}*{}*{} frente gav\n '.format(gaveta_aux - 35, largura_aux, espessura,))
+            front_gav2 = ('2x {}*{}*{} frente gav\n '.format(gaveta_aux - 35, largura_aux, espessura,))
             print(front_gav_2)
             arquivo.write(front_gav2)
         if profundidade_modulo >= 470:
             lat_two_drawers = ('2x {}*{}*{} (1+) lateral gav maior\n'.format(gaveta_maior - 35, '420', espessura))
             lat_smaller_two_drawers = ('2x {}*{}*{} (1+) lateral gav menor\n'.format(gaveta_menor - 35,'420',espessura))
-            back_two_drawers = ('2x {}*{}*{} fundo gav\n'.format(fundo_gav,'420',espessura_fundo))
+            back_two_drawers = ('2x {}*{}*{} (2+) fundo gav\n'.format(fundo_gav,'420',espessura_fundo))
             print(lat_two_drawers)
             print(lat_smaller_two_drawers)
             print(back_two_drawers)
@@ -152,7 +151,7 @@ while (True):
         else:
             lat_two_drawers = ('2x {}*{}*{} (1+) lateral gav maior\n'.format(gaveta_maior - 35, profundidade_modulo - 50, espessura))
             lat_smaller_two_drawers = ('2x {}*{}*{} (1+) lateral gav menor\n'.format(gaveta_menor - 35, profundidade_modulo - 50,espessura))
-            back_two_drawers = ('2x {}*{}*{} fundo gav\n'.format(fundo_gav, profundidade_modulo - 50,espessura_fundo))
+            back_two_drawers = ('2x {}*{}*{} (2+) fundo gav\n'.format(fundo_gav, profundidade_modulo - 50,espessura_fundo))
             print(lat_two_drawers)
             print(lat_smaller_two_drawers)
             print(back_two_drawers)
@@ -183,7 +182,7 @@ while (True):
         if profundidade_modulo >= 470:
             lat_three_drawers = ('2x {}*{}*{} (1+) lateral gav maior\n'.format(gaveta_maior - 35, '420', espessura))
             lat_smaller_three_drawers = ('4x {}*{}*{} (1+) lateral gav menor\n'.format(gaveta_menor - 35, '420', espessura))
-            back_three_drawers = ('3x {}*{}*{} fundo gav\n'.format(fundo_gav, '420', espessura_fundo))
+            back_three_drawers = ('3x {}*{}*{} (2+) fundo gav\n'.format(fundo_gav, '420', espessura_fundo))
             print(lat_three_drawers)
             print(lat_smaller_three_drawers)
             print(back_three_drawers)
@@ -191,7 +190,7 @@ while (True):
         else:
             lat_three_drawers = ('2x {}*{}*{} (1+) lateral gav maior\n'.format(gaveta_maior - 35, profundidade_modulo - 50, espessura))
             lat_smaller_three_drawers = ('4x {}*{}*{} (1+) lateral gav menor\n'.format(gaveta_menor - 35, profundidade_modulo - 50, espessura))
-            back_three_drawers = ('3x {}*{}*{} fundo gav\n'.format(fundo_gav, profundidade_modulo - 50, espessura_fundo))
+            back_three_drawers = ('3x {}*{}*{} (2+) fundo gav\n'.format(fundo_gav, profundidade_modulo - 50, espessura_fundo))
             print(lat_three_drawers)
             print(lat_smaller_three_drawers)
             print(back_three_drawers)
@@ -223,7 +222,7 @@ while (True):
         if profundidade_modulo >= 470:
             lat_four_drawers = ('2x {}*{}*{} (1+) lateral gav maior\n'.format(gaveta_maior - 35, '420', espessura))
             lat_four_smaller_drawers = ('6x {}*{}*{} (1+) lateral gav menor\n'.format(gaveta_menor - 35, '420', espessura))
-            back_four_drawers = ('3x {}*{}*{} fundo gav\n'.format(fundo_gav, '420', espessura_fundo))
+            back_four_drawers = ('3x {}*{}*{} (2+) fundo gav\n'.format(fundo_gav, '420', espessura_fundo))
             print(lat_four_drawers)
             print(lat_four_smaller_drawers)
             print(back_four_drawers)
@@ -231,7 +230,7 @@ while (True):
         else:
             lat_four_drawers = ('2x {}*{}*{} (1+) lateral gav maior\n'.format(gaveta_maior - 35, profundidade_modulo - 50, espessura))
             lat_four_smaller_drawers = ('6x {}*{}*{} (1+) lateral gav menor\n'.format(gaveta_menor - 35, profundidade_modulo - 50, espessura))
-            back_four_drawers = ('4x {}*{}*{} fundo gav\n'.format(fundo_gav, profundidade_modulo - 50, espessura_fundo))
+            back_four_drawers = ('4x {}*{}*{} (2+) fundo gav\n'.format(fundo_gav, profundidade_modulo - 50, espessura_fundo))
             print(lat_four_drawers)
             print(lat_four_smaller_drawers)
             print(back_four_drawers)
@@ -262,7 +261,7 @@ while (True):
         lateral_maior_int = ('1x {}*{}*{} (1+/1-) lateral maior mod porta tempero\n'.format(lateral_int, profundidade_modulo - 50, espessura))
         lateral_menor_int = ('2x {}*{}*{} (1+/1-) lateral menor mod porta tempero\n'.format(altura_int, profundidade_modulo - 50, espessura))
         fren_vers_int = ('4x {}*{}*{} (1+) frente/verso mod porta tempero\n'.format(fren_vers, largura_aux_2, espessura))
-        fundo_tempero = ('2x {}*{}*{} fundo porta tempero\n'.format(profundidade_modulo - 50, largura_aux_2 + 15, espessura_fundo))
+        fundo_tempero = ('2x {}*{}*{} (2+) fundo porta tempero\n'.format(profundidade_modulo - 50, largura_aux_2 + 15, espessura_fundo))
         print(lateral_caixa)
         print(base_caixa)
         print(batente_caixa)
@@ -272,11 +271,7 @@ while (True):
         print(fren_vers_int)
         print(fundo_tempero)
 
-
         arquivo.write(lateral_caixa + base_caixa + batente_caixa + frente_caixa + lateral_maior_int + lateral_menor_int + fren_vers_int + fundo_tempero)
 
     arquivo.write('##################################\n')
     arquivo.close()
-
-
-
