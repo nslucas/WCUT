@@ -34,7 +34,7 @@ while True:
     total = gaveta_aux - 35
     total = (2 * gaveta_menor) + gaveta_maior + 105
 
-    arquivo = open(r"C:\Users\Positivo i5\Desktop\PLANOS DE CORTE\Plano de corte " + nome_cliente + '.txt', "a")
+    arquivo = open(r"C:\Users\lucas\Desktop\PLANOS DE CORTE\Plano de corte  " + nome_cliente + '.txt', "a")
 
     lateral = '2x {}*{}*{} (1+/1-) lateral\n'.format(altura, profundidade_modulo, espessura)
     print(lateral)
@@ -109,10 +109,10 @@ while True:
             print(lat_one_drawer)
             print(back_one_drawer)
             arquivo.write(lat_one_drawer + back_one_drawer)
-        fren_vers = largura - 87
-        front_back_one_drawer = ('2x {}*{}*{} (1+) frente/verso gav\n'.format(gaveta - 35, fren_vers, espessura))
-        print(front_back_one_drawer)
-        arquivo.write(front_back_one_drawer)
+            fren_vers = largura - 87
+            front_back_one_drawer = ('2x {}*{}*{} (1+) frente/verso gav\n'.format(gaveta - 35, fren_vers, espessura))
+            print(front_back_one_drawer)
+            arquivo.write(front_back_one_drawer)
 
     if quantidade_gavetas == 2:
         sub_altura = altura - 15
@@ -122,14 +122,14 @@ while True:
         gaveta_maior = math.ceil(gaveta_aux + gaveta_aux2 - 35)
         fundo_gav = largura - 57
         total = gaveta_aux - 35
-        if total > sub_altura:'## pega o resto e coloca na medida da gaveta maior'
+        if total > sub_altura:## pega o resto e coloca na medida da gaveta maior
             rest = sub_altura - total
             gaveta_maior = gaveta_maior + rest
-        front_gav_2 = ("1x {}*{}*{} (4L) frente gav menor\n".format(gaveta_menor, largura_aux, espessura))
-        front_gav_bigger_2 = ("1x {}*{}*{} (4L) frente gav maior\n".format(gaveta_maior, largura_aux, espessura))
-        print(front_gav_2)
-        print(front_gav_bigger_2)
-        arquivo.write(front_gav_2 + front_gav_bigger_2)
+            front_gav_2 = ("1x {}*{}*{} (4L) frente gav menor\n".format(gaveta_menor, largura_aux, espessura))
+            front_gav_bigger_2 = ("1x {}*{}*{} (4L) frente gav maior\n".format(gaveta_maior, largura_aux, espessura))
+            print(front_gav_2)
+            print(front_gav_bigger_2)
+            arquivo.write(front_gav_2 + front_gav_bigger_2)
         if total == sub_altura:
             front_gav2 = ('2x {}*{}*{} frente gav\n '.format(gaveta_aux - 35, largura_aux, espessura,))
             print(front_gav_2)
