@@ -229,6 +229,16 @@ if ambiente == 'cozinha':
                 fundo_gav = largura - 57
                 gaveta = sub_altura - 35
 
+                lateral = '2x {}*{}*{} (1+/1-) lateral\n'.format(altura, profundidade_modulo, espessura)
+                print(lateral)
+                arquivo.write(lateral)
+
+                with_batente = '1x {}*{}*{} (1+) base\n'.format(subtracao_largura, profundidade_modulo, espessura)
+                print(with_batente)
+                with_batente_2 = '1x {}*{}*{} (2+) batente\n'.format(subtracao_largura, 60, espessura)
+                print(with_batente_2)
+                arquivo.write(with_batente + with_batente_2)
+
                 one_drawer = ('1x {}*{}*{} (4L) frente gav\n'.format(gaveta, largura_aux, espessura))
                 arquivo.write(one_drawer)
 
@@ -262,6 +272,15 @@ if ambiente == 'cozinha':
                 gaveta_maior = math.ceil(gaveta_aux + gaveta_aux2 - 35)
                 fundo_gav = largura - 57
                 total = gaveta_aux - 35
+                lateral = '2x {}*{}*{} (1+/1-) lateral\n'.format(altura, profundidade_modulo, espessura)
+                print(lateral)
+                arquivo.write(lateral)
+
+                with_batente = '1x {}*{}*{} (1+) base\n'.format(subtracao_largura, profundidade_modulo, espessura)
+                print(with_batente)
+                with_batente_2 = '1x {}*{}*{} (2+) batente\n'.format(subtracao_largura, 60, espessura)
+                print(with_batente_2)
+                arquivo.write(with_batente + with_batente_2)
                 if total > sub_altura:  ## pega o resto e coloca na medida da gaveta maior
                     rest = sub_altura - total
                     gaveta_maior = gaveta_maior + rest
@@ -315,6 +334,15 @@ if ambiente == 'cozinha':
                     gaveta_maior = math.ceil(gaveta_aux * 2) - 35  ###math.ceil() arredonda para cima
                     largura_aux = largura - 10
                     total = (2 * gaveta_menor) + gaveta_maior + 105
+                    lateral = '2x {}*{}*{} (1+/1-) lateral\n'.format(altura, profundidade_modulo, espessura)
+                    print(lateral)
+                    arquivo.write(lateral)
+
+                    with_batente = '1x {}*{}*{} (1+) base\n'.format(subtracao_largura, profundidade_modulo, espessura)
+                    print(with_batente)
+                    with_batente_2 = '1x {}*{}*{} (2+) batente\n'.format(subtracao_largura, 60, espessura)
+                    print(with_batente_2)
+                    arquivo.write(with_batente + with_batente_2)
                     if total < sub_altura:  ## pega o resto e coloca na medida da gaveta maior
                         rest = sub_altura - total
                         gaveta_maior = gaveta_maior + rest
@@ -366,6 +394,15 @@ if ambiente == 'cozinha':
                     largura_aux = largura - 10
                     total = gaveta_aux - 35
                     fundo_gav = largura - 57
+                    lateral = '2x {}*{}*{} (1+/1-) lateral\n'.format(altura, profundidade_modulo, espessura)
+                    print(lateral)
+                    arquivo.write(lateral)
+
+                    with_batente = '1x {}*{}*{} (1+) base\n'.format(subtracao_largura, profundidade_modulo, espessura)
+                    print(with_batente)
+                    with_batente_2 = '1x {}*{}*{} (2+) batente\n'.format(subtracao_largura, 60, espessura)
+                    print(with_batente_2)
+                    arquivo.write(with_batente + with_batente_2)
                     if total > sub_altura:  ## pega o resto e coloca na medida da gaveta maior
                         rest = sub_altura - total
                         gaveta_maior = gaveta_maior + rest
